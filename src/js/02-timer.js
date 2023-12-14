@@ -53,6 +53,7 @@ function updateTimer() {
   distance -= 1000;
   if (distance <= 0) {
     clearInterval(interval);
+    Notiflix.Notify.success('Timer finish');
   }
 }
 
