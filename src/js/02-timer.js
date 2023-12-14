@@ -51,13 +51,17 @@ function updateTimer() {
   });
 
   distance -= 1000;
+  if (distance <= 0) {
+    clearInterval(interval);
+  }
 }
 
 const startBtn = document.querySelector('button[data-start]');
 startBtn.disabled = true;
 
+let interval;
 startBtn.addEventListener('click', () => {
-  setInterval(updateTimer, 1000);
+  interval = setInterval(updateTimer, 1000);
   startBtn.disabled = true;
 });
 
