@@ -22,6 +22,7 @@ const options = {
 
     if (convertedSelectedTime <= new Date()) {
       Notiflix.Notify.failure('Please choose a date in the future');
+      startBtn.disabled = true;
     }
     startBtn.disabled = false;
   },
@@ -54,7 +55,6 @@ function updateTimer() {
   if (distance <= 0) {
     clearInterval(interval);
     Notiflix.Notify.success('Timer finish');
-    startBtn.disabled = false;
   }
 }
 
