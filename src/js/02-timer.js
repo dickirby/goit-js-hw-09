@@ -54,6 +54,7 @@ function updateTimer() {
   if (distance <= 0) {
     clearInterval(interval);
     Notiflix.Notify.success('Timer finish');
+    startBtn.disabled = false;
   }
 }
 
